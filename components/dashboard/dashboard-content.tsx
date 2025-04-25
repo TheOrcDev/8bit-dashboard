@@ -93,7 +93,9 @@ export function DashboardContent() {
             className="w-1/3 pl-7"
             placeholder="Search products..."
           />
-          <ModeToggle />
+          <div className="flex items-center gap-2">
+            <ModeToggle />
+          </div>
         </div>
       </header>
       <main className="flex-1 space-y-4 p-4 md:p-6">
@@ -114,7 +116,7 @@ export function DashboardContent() {
               <DollarSign className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
+              <div className="text-2xl font-bold">$45,231</div>
               <p className="text-xs text-muted-foreground flex items-center">
                 <ArrowUpIcon className="mr-1 size-4 text-emerald-500" />
                 <span className="text-emerald-500">+20.1%</span>

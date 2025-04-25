@@ -1,13 +1,13 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
+import { cva, VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
-import { Button as ShadcnButton } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button as ShadcnButton } from "@/components/ui/button";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const buttonVariants = cva("", {
   variants: {
@@ -34,17 +34,17 @@ export const buttonVariants = cva("", {
     variant: "default",
     size: "default",
   },
-})
+});
 
 export interface BitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  ref?: React.Ref<HTMLButtonElement>
+  asChild?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 function Button({ children, ...props }: BitButtonProps) {
-  const { variant, size, className, font } = props
+  const { variant, size, className, font } = props;
 
   return (
     <ShadcnButton
@@ -62,16 +62,16 @@ function Button({ children, ...props }: BitButtonProps) {
       {variant !== "ghost" && variant !== "link" && size !== "icon" && (
         <>
           {/* Pixelated border */}
-          <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute top-1.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-          <div className="absolute top-1.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+          <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute top-1.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
+          <div className="absolute top-1.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
           {variant !== "outline" && (
             <>
               {/* Top shadow */}
@@ -97,7 +97,7 @@ function Button({ children, ...props }: BitButtonProps) {
         </>
       )}
     </ShadcnButton>
-  )
+  );
 }
 
-export { Button }
+export { Button };
